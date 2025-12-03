@@ -1,6 +1,6 @@
 VAR-EGARCH Model Summary (Tariff → GDP)
 VAR Lag Order: 6
-GARCH Order: (1, 1)
+GARCH Order: (1, 2)
 
 Tariff → GDP Impact Coefficients (Lag 1-6):
   Lag 1: 0.008639

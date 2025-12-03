@@ -20,8 +20,8 @@ class Config:
         # 存储路径
         self.save_dir = "第一题/output_var/"
         # 模型参数
-        self.max_ar_lag = 10  # AR-GARCH的AR阶数上限
-        self.garch_order = (1, 1)  # GARCH(p,q)
+        self.max_ar_lag = 6  # AR-GARCH的AR阶数上限
+        self.garch_order = (1, 2)  # GARCH(p,q)
         self.forecast_horizon = 24  # 关税预测月数
         self.simulations = 2000  # 模拟次数
         self.var_lag = 6  # VAR模型滞后阶数（适配月度数据）
@@ -167,7 +167,10 @@ class TariffRateAnalyzer:
             vol='EGARCH', p=self.config.garch_order[0], q=self.config.garch_order[1],
             dist='t'
         )
-        self.model["garch_result"] = self.model["garch_model"].fit(disp='off', options={'maxiter': 1000})
+        # self.model["garch_result"] = self.model["garch_model"].fit(disp='off', options={'maxiter': 1000})
+
+            # 移除bounds参数，增加迭代次数确保收敛
+        self.model["garch_result"] = self.model["garch_model"].fit(disp='off', options={'maxiter': 2000})
         
         print(f"\n=== AR-EGARCH模型系数 ===")
         print(f"ARCH项(alpha)：{self.model['garch_result'].params['alpha[1]']:.4f}（p={self.model['garch_result'].pvalues['alpha[1]']:.4f}）")

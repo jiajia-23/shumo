@@ -33,8 +33,8 @@ class Config:
         self.save_dir = "第一题/output_var_improve/"
         self.garch_diag_dir = f"{self.save_dir}GARCH诊断图/"
         # 模型参数（按李东风教授流程设置）
-        self.max_ar_lag = 10  # AR-GARCH的AR阶数上限
-        self.garch_order = (1, 1)  # 标准GARCH(1,1)（李东风教授推荐基础模型）
+        self.max_ar_lag = 6  # AR-GARCH的AR阶数上限
+        self.garch_order = (1, 2)  # 标准GARCH(1,1)（李东风教授推荐基础模型）
         self.forecast_horizon = 24  # 关税预测月数
         self.simulations = 2000  # 模拟次数
         self.var_lag = 6  # VAR模型滞后阶数（适配月度数据）
