@@ -1,0 +1,18 @@
+VAR-EGARCH Model Summary (Tariff → GDP)
+================================================================================
+VAR Lag Order: 6
+GARCH Order: (1, 1)
+
+Tariff → GDP Impact Coefficients (Lag 1-6):
+  Lag 1: 0.008639
+  Lag 2: -0.001690
+  Lag 3: -0.007025
+  Lag 4: -0.001680
+  Lag 5: 0.000111
+  Lag 6: -0.015413
+
+Long-Term Impact Coefficient: -0.017057
+VAR Model Fit Metrics:
+  AIC: -15.5404
+  BIC: -15.2765
+  Log Likelihood: 1954.5410
